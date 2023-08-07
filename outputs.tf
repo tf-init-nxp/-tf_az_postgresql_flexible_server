@@ -1,3 +1,8 @@
+output "postgresql_flexible_server_name" {
+  description = "Name for PostgreSQL Flexible server."
+  value       = azurerm_postgresql_flexible_server.postgresql_flexible_server.name
+}
+
 output "postgresql_flexible_administrator_login" {
   description = "Administrator login for PostgreSQL Flexible server."
   value       = azurerm_postgresql_flexible_server.postgresql_flexible_server.administrator_login

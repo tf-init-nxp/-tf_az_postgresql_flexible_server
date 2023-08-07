@@ -38,16 +38,15 @@ resource "azurerm_postgresql_flexible_server" "postgresql_flexible_server" {
   private_dns_zone_id = var.private_dns_zone_id
   delegated_subnet_id = var.delegated_subnet_id
 
-  tags = merge(
-    local.default_tags,
-    var.extra_tags,
-  )
+  tags = local.tags
 
   lifecycle {
     precondition {
       condition     = var.private_dns_zone_id != null && var.delegated_subnet_id != null || var.private_dns_zone_id == null && var.delegated_subnet_id == null
       error_message = "var.private_dns_zone_id and var.delegated_subnet_id should either both be set or none of them."
     }
+
+    ignore_changes = [high_availability[0].standby_availability_zone, zone]
   }
 }
 

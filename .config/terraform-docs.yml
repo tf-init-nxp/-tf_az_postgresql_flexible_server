@@ -13,7 +13,7 @@ sections:
   hide: [requirements]
 
 content: |-
-  # tf_az_postgresql_flexible_server
+  # Terraform Module to create AZ Resources
 
   ## Contributing
   If you want to contribute to this repository, feel free to use our [pre-commit](https://pre-commit.com/) git hook configuration

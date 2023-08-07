@@ -9,14 +9,11 @@ variable "location" {
   default     = "westeurope"
 }
 
-variable "project_name" {
-  description = "Project name which this resource belongs."
-  type        = string
-}
 
 variable "environment" {
   description = "Name of application's environnement."
   type        = string
+  default     = "development"
 }
 
 variable "extra_tags" {
@@ -46,7 +43,7 @@ variable "postgresql_version" {
 variable "zone" {
   description = "Specify availability-zone for PostgreSQL Flexible main Server."
   type        = number
-  default     = 1
+  default     = null
 }
 
 variable "tier" {

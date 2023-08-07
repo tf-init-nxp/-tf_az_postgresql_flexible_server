@@ -5,9 +5,10 @@ locals {
     "MemoryOptimized" = "MO"
   }
 
-  default_tags = {
-    environment  = var.environment
-    project_name = var.project_name
-  }
+  basic_tags = {}
 
+  tags = merge(
+    local.basic_tags,
+    var.extra_tags,
+  )
 }
